@@ -1,0 +1,23 @@
+{
+  "name": "app-tse-2016",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Felipe Soares"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "1.12.4",
+    "jquery.maskedinput": "^1.4.1",
+    "bootstrap-sass": "^3.3.7"
+  }
+}
