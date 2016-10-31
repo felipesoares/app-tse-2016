@@ -1,0 +1,88 @@
+<nav-bar></nav-bar>
+<ion-content>
+  <div class="container">
+
+    <div class="starter-template">
+
+        <div class="page-header">
+            <h1>Candidatos a Vereador</h1>
+        </div>
+
+        <div>
+            <div class="form-group">
+                <label for="cmbCidade">Cidade</label>
+                <select class="form-control" id="cmbCidade">
+                  <option>Caeté/MG</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="cmbGrauEscolaridade">Grau(s) de Escolaridade</label>
+                <select class="form-control selectpicker" id="cmbGrauEscolaridade" multiple data-actions-box="true" data-live-search="false">
+                  <option>ANALFABETO</option>
+                  <option>LÊ E ESCREVE</option>
+                  <option>ENSINO FUNDAMENTAL INCOMPLETO</option>
+                  <option>ENSINO FUNDAMENTAL COMPLETO</option>
+                  <option>ENSINO MÉDIO INCOMPLETO</option>
+                  <option>ENSINO MÉDIO COMPLETO</option>
+                  <option>SUPERIOR INCOMPLETO</option>
+                  <option>SUPERIOR COMPLETO</option>
+                  <option>NÃO INFORMADO</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="cmbSexo">Sexo(s)</label>
+                <select class="form-control selectpicker" id="cmbSexo" multiple data-actions-box="true" data-live-search="false">
+                  <option>Masculino</option>
+                  <option>Feminino</option>
+                  <option>Não informado</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="cmbPartido">Partido(s)</label>
+                <select class="form-control selectpicker" id="cmbPartido" multiple data-actions-box="true" data-live-search="false">
+                  <option>A</option>
+                  <option>B</option>
+                  <option>C</option>
+                  <option>D</option>
+                  <option>E</option>
+                </select>
+            </div>
+            <button class="btn btn-default">Consultar</button>
+        </div>
+
+        <div class="page-header">
+            <h2>Candidatos</h2>
+        </div>
+
+        <div class="row">
+
+            <div class="col-sm-4">
+                <div class="table-responsive">
+                    <table class="table table-hover table-bordered">
+                        <tbody>
+                            <tr>
+                                <td align="center" colspan="2">Nome</td>
+                            </tr>
+                            <tr>
+                              <th>Escolaridade:</th>
+                              <td>X</td>
+                            </tr>
+                            <tr>
+                              <th>Sexo:</th>
+                              <td>X</td>
+                            </tr>
+                            <tr>
+                              <th>Partido:</th>
+                              <td>X</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+  </div>
+</ion-content>
