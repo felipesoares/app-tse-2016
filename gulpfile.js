@@ -51,7 +51,7 @@ gulp.task('css', function() {
         .pipe(concatCss("style.min.css"))
         .pipe(importCss())
         .pipe(cleanCSS())
-        .pipe(gulp.dest("./www/build/css/"));
+        .pipe(gulp.dest("./www/"));
 });
 
 gulp.task('cssLibs', function() {
@@ -61,7 +61,7 @@ gulp.task('cssLibs', function() {
         .pipe(rename({
             suffix: '.min'
         }))
-        .pipe(gulp.dest("./www/build/css/"));
+        .pipe(gulp.dest("./www/"));
 });
 
 gulp.task('joinPathsLibsJS', function() {
@@ -88,21 +88,21 @@ gulp.task('jsLibs', function() {
     return gulp.src(libsJS['libs'])
         .pipe(concat('bibliotecas.min.js'))
         .pipe(uglify())
-        .pipe(gulp.dest('./www/build/js/'));
+        .pipe(gulp.dest('./www/'));
 });
 
 gulp.task('jsAssets', function() {
     return gulp.src(assetsJS['assets'])
         .pipe(concat('script.min.js'))
         .pipe(uglify())
-        .pipe(gulp.dest('./www/build/js/'));
+        .pipe(gulp.dest('./www/'));
 });
 
 gulp.task('js', ['joinPathsLibsJS', 'joinPathsAssetsJS', 'jsLibs', 'jsAssets'], function() {});
 
 gulp.task('reloadCSS', function() {
     return gulp.src("./src/assets/css/*.css")
-        .pipe(browserSync.stream());
+        //.pipe(browserSync.stream());
 });
 
 gulp.task('tinypng', function() {
@@ -114,8 +114,8 @@ gulp.task('tinypng', function() {
 gulp.task('browser-sync', function() {
     browserSync.init({
         open: 'external', // false,
-        host: 'apptse.localhost.com',
-        proxy: 'apptse.localhost.com',
+        host: '',
+        proxy: '',
         port: 80,
         /*
         server: {
@@ -125,12 +125,12 @@ gulp.task('browser-sync', function() {
     });
 });
 
-gulp.task('default', ['browser-sync', 'compass', 'css', 'js'], function() {
+gulp.task('default', ['compass', 'css', 'js'], function() {// 'browser-sync',
     gulp.watch(["./src/assets/css/*.css", "!./src/assets/css/bibliotecas.css"], ['css', 'reloadCSS']);
     gulp.watch(["./src/assets/css/bibliotecas.css"], ['cssLibs', 'reloadCSS']);
     gulp.watch("./scripts.json", ['js']);
     gulp.watch("./src/assets/js/*.js", ['jsAssets']);
-    gulp.watch("./src/assets/js/*.js").on('change', browserSync.reload);
+    //gulp.watch("./src/assets/js/*.js").on('change', browserSync.reload);
 });
 
 gulp.task('build', ['compile'], function(callback) {

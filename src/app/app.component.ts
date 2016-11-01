@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Platform } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
 
-import { HomePage } from '../pages/home/home';
+import { Login } from '../pages/login/login';
 import { PerfilEleitorado } from '../pages/perfil-eleitorado/perfil-eleitorado';
 import { CandidatosPrefeito } from '../pages/candidatos-prefeito/candidatos-prefeito';
 import { CandidatosVereador } from '../pages/candidatos-vereador/candidatos-vereador';

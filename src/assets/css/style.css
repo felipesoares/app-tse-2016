@@ -1,28 +1,34 @@
 @charset "UTF-8";
 /* Estilos do Projeto */
 /* Estilo das Páginas do Projeto */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Apache24\/htdocs\/subdomains\/app-tse-2016\/src\/assets\/sass\/imports\/_style\.scss}line{font-family:\000031}}
 body {
   padding-top: 50px;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Apache24\/htdocs\/subdomains\/app-tse-2016\/src\/assets\/sass\/imports\/_style\.scss}line{font-family:\000035}}
 h1 {
   text-align: center;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Apache24\/htdocs\/subdomains\/app-tse-2016\/src\/assets\/sass\/imports\/_style\.scss}line{font-family:\000039}}
 .starter-template {
-  padding: 30px 15px 60px;
+  padding: 51px 15px 60px;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Apache24\/htdocs\/subdomains\/app-tse-2016\/src\/assets\/sass\/imports\/_style\.scss}line{font-family:\0000313}}
 .bootstrap-select.btn-group .dropdown-menu {
   max-width: 100%;
 }
 
 @media (max-width: 767px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Apache24\/htdocs\/subdomains\/app-tse-2016\/src\/assets\/sass\/imports\/_style\.scss}line{font-family:\0000317}}
   body {
     font-size: 16px;
     -webkit-text-size-adjust: 100%;
   }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Apache24\/htdocs\/subdomains\/app-tse-2016\/src\/assets\/sass\/imports\/_style\.scss}line{font-family:\0000322}}
   input,
   select,
   textarea {
