@@ -1,9 +1,13 @@
 {
-  "name": "ionic-hello-world",
-  "author": "Ionic Framework",
-  "homepage": "http://ionicframework.com/",
+  "name": "app-tse-2016",
+  "version": "1.0.0",
+  "description": "app-tse-2016: An Ionic project",
+  "main": "index.js",
+  "author": "Felipe Soares",
+  "license": "ISC",
   "private": true,
   "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "ionic-app-scripts build",
     "watch": "ionic-app-scripts watch",
     "serve:before": "watch",
@@ -31,7 +35,21 @@
   },
   "devDependencies": {
     "@ionic/app-scripts": "^0.0.36",
-    "typescript": "^2.0.3"
+    "typescript": "^2.0.3",
+    "browser-sync": "^2.16.0",
+    "clear-require": "^1.0.1",
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^2.0.12",
+    "gulp-compass": "^2.1.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-concat-css": "^2.3.0",
+    "gulp-import-css": "^0.1.2",
+    "gulp-rename": "^1.2.2",
+    "gulp-tinypng": "^1.0.2",
+    "gulp-uglify": "^2.0.0",
+    "gulp-util": "^3.0.7",
+    "path": "^0.12.7",
+    "run-sequence": "^1.2.2"
   },
   "cordovaPlugins": [
     "cordova-plugin-whitelist",
@@ -41,6 +59,5 @@
     "cordova-plugin-splashscreen",
     "ionic-plugin-keyboard"
   ],
-  "cordovaPlatforms": [],
-  "description": "app-tse-2016: An Ionic project"
+  "cordovaPlatforms": []
 }
