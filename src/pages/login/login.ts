@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+declare var jQuery: any;
 
 /*
   Generated class for the Login page.
@@ -17,6 +18,7 @@ export class Login {
 
   ionViewDidLoad() {
     console.log('Hello Login Page');
+    jQuery("input[data-mask='cpf']").mask("999.999.999-99");
   }
 
 }

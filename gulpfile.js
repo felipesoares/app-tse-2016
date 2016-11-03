@@ -99,6 +99,7 @@ gulp.task('jsAssets', function() {
 });
 
 gulp.task('js', ['joinPathsLibsJS', 'joinPathsAssetsJS', 'jsLibs', 'jsAssets'], function() {});
+gulp.task('jsLibrarys', ['joinPathsLibsJS', 'jsLibs'], function() {});
 
 gulp.task('reloadCSS', function() {
     return gulp.src("./src/assets/css/*.css")
@@ -135,6 +136,6 @@ gulp.task('default', ['compass', 'css', 'js'], function() {// 'browser-sync',
 
 gulp.task('build', ['compile'], function(callback) {
     setTimeout(function() {
-        runSequence(['cssLibs', 'css', 'js'], callback);
+        runSequence(['cssLibs', 'jsLibrarys'], callback);
     }, 10000);
 });
