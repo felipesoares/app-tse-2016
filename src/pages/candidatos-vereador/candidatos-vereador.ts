@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import * as $ from "jquery";
 
 /*
   Generated class for the CandidatosVereador page.
@@ -18,10 +17,6 @@ export class CandidatosVereador {
 
   ionViewDidLoad() {
     console.log('Hello CandidatosVereador Page');
-
-    $('.selectpicker').selectpicker({
-      dropupAuto: false
-    });
   }
 
 }
