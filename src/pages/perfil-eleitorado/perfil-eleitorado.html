@@ -1,60 +1,73 @@
-<nav-bar></nav-bar>
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Perfil Eleitoral</ion-title>
+  </ion-navbar>
+</ion-header>
+
 <ion-content>
   <div class="container">
+
     <div class="starter-template">
+      
       <div class="page-header">
         <h1>Perfil dos Eleitores por Zona Eleitoral</h1>
       </div>
       <div>
+
         <div class="form-group">
-          <label for="cmbZonaEleitoral">Zona Eleitoral</label>
-          <select class="form-control" id="cmbZonaEleitoral">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-              </select>
-        </div>
-        <div class="form-group">
-          <label for="cmbFaixaEtaria">Faixa(s) Etária(s)</label>
-          <!--
-          <select class="form-control selectpicker" id="cmbFaixaEtaria" multiple data-actions-box="true" data-live-search="false"></select>
-           -->
           <ion-item>
-          <ion-label></ion-label>
-          <ion-select [(ngModel)]="toppings" multiple="true">
-          <ion-option>16 ANOS</ion-option>
-          <ion-option>17 ANOS</ion-option>
-          <ion-option>18 A 20 ANOS</ion-option>
-          <ion-option>21 A 24 ANOS</ion-option>
-          <ion-option>25 A 34 ANOS</ion-option>
-          <ion-option>35 A 44 ANOS</ion-option>
-          <ion-option>45 A 59 ANOS</ion-option>
-          <ion-option>60 A 69 ANOS</ion-option>
-          <ion-option>70 A 79 ANOS</ion-option>
-          <ion-option>SUPERIOR A 79 ANOS</ion-option>
-          <ion-option>INVÁLIDA</ion-option>
-          </ion-select>
+            <ion-label>Zona Eleitoral</ion-label>
+            <ion-select cancelText="CANCELAR" okText="OK">
+              <ion-option selected="true">1</ion-option>
+              <ion-option>2</ion-option>
+              <ion-option>3</ion-option>
+              <ion-option>4</ion-option>
+              <ion-option>5</ion-option>
+              <ion-option>6</ion-option>
+            </ion-select>
           </ion-item>
         </div>
 
+        <div class="form-group">
+          <ion-item>
+            <ion-label>Faixa(s) Etária(s)</ion-label>
+            <ion-select multiple="true" cancelText="CANCELAR" okText="OK">
+              <ion-option>16 ANOS</ion-option>
+              <ion-option>17 ANOS</ion-option>
+              <ion-option>18 A 20 ANOS</ion-option>
+              <ion-option>21 A 24 ANOS</ion-option>
+              <ion-option>25 A 34 ANOS</ion-option>
+              <ion-option>35 A 44 ANOS</ion-option>
+              <ion-option>45 A 59 ANOS</ion-option>
+              <ion-option>60 A 69 ANOS</ion-option>
+              <ion-option>70 A 79 ANOS</ion-option>
+              <ion-option>SUPERIOR A 79 ANOS</ion-option>
+              <ion-option>INVÁLIDA</ion-option>
+            </ion-select>
+          </ion-item>
+        </div>
 
         <div class="form-group">
-          <label for="cmbGrauEscolaridade">Grau(s) de Escolaridade</label>
-          <select class="form-control selectpicker" id="cmbGrauEscolaridade" multiple data-actions-box="true" data-live-search="false">
-                <option>ANALFABETO</option>
-                <option>LÊ E ESCREVE</option>
-                <option>ENSINO FUNDAMENTAL INCOMPLETO</option>
-                <option>ENSINO FUNDAMENTAL COMPLETO</option>
-                <option>ENSINO MÉDIO INCOMPLETO</option>
-                <option>ENSINO MÉDIO COMPLETO</option>
-                <option>SUPERIOR INCOMPLETO</option>
-                <option>SUPERIOR COMPLETO</option>
-                <option>NÃO INFORMADO</option>
-              </select>
+          <ion-item>
+            <ion-label>Grau(s) de Escolaridade</ion-label>
+            <ion-select multiple="true" cancelText="CANCELAR" okText="OK">
+              <ion-option>ANALFABETO</ion-option>
+              <ion-option>LÊ E ESCREVE</ion-option>
+              <ion-option>ENSINO FUNDAMENTAL INCOMPLETO</ion-option>
+              <ion-option>ENSINO FUNDAMENTAL COMPLETO</ion-option>
+              <ion-option>ENSINO MÉDIO INCOMPLETO</ion-option>
+              <ion-option>ENSINO MÉDIO COMPLETO</ion-option>
+              <ion-option>SUPERIOR INCOMPLETO</ion-option>
+              <ion-option>SUPERIOR COMPLETO</ion-option>
+              <ion-option>NÃO INFORMADO</ion-option>
+            </ion-select>
+          </ion-item>
         </div>
-        <button class="btn btn-default">Consultar</button>
+
+        <button ion-button color="dark">Consultar</button>
       </div>
 
       <div class="page-header">

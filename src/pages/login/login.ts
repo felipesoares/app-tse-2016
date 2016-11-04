@@ -13,7 +13,7 @@ import { NavController } from 'ionic-angular';
 })
 export class Login {
 
-  constructor(public navCtrl: NavController) {}
+  constructor(public navCtrl: NavController) { }
 
   ionViewDidLoad() {
     console.log('Hello Login Page');
