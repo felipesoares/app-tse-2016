@@ -1,22 +1,25 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import {Http} from '@angular/http';
 
-/*
-  Generated class for the CandidatosPrefeito page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
 @Component({
   selector: 'page-candidatos-prefeito',
   templateUrl: 'candidatos-prefeito.html'
 })
 export class CandidatosPrefeito {
 
-  constructor(public navCtrl: NavController) {}
+	param = {cidade: 1}
+	
+  constructor(private http:Http) {
+	  this.http = http;
+  }
 
   ionViewDidLoad() {
     console.log('Hello CandidatosPrefeito Page');
   }
 
+  consulta() {
+    console.log("Consulta submetida");
+	console.log(this.param);
+  }
+  
 }

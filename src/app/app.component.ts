@@ -1,6 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { Platform, MenuController, Nav } from 'ionic-angular';
-import { StatusBar, Splashscreen } from 'ionic-native';
+import { StatusBar } from 'ionic-native';
 
 import { Login } from '../pages/login/login';
 import { PerfilEleitorado } from '../pages/perfil-eleitorado/perfil-eleitorado';

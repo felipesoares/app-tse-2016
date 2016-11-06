@@ -16,13 +16,13 @@
             <h1>Candidatos a Vereador</h1>
         </div>
 
-        <div>
+        <form (ngSubmit)="consulta()">
 
             <div class="form-group">
               <ion-item>
                 <ion-label>Cidade</ion-label>
-                <ion-select cancelText="CANCELAR" okText="OK">
-                  <ion-option selected="true">Caeté/MG</ion-option>
+                <ion-select cancelText="CANCELAR" okText="OK" required name="cidade" [(ngModel)]="param.cidade">
+                  <ion-option value="1" selected="true">Caeté/MG</ion-option>
                 </ion-select>
               </ion-item>
             </div>
@@ -30,7 +30,7 @@
             <div class="form-group">
               <ion-item>
                 <ion-label>Grau(s) de Escolaridade</ion-label>
-                <ion-select multiple="true" cancelText="CANCELAR" okText="OK">
+                <ion-select multiple="true" cancelText="CANCELAR" okText="OK" name="grauEscolaridade" [(ngModel)]="param.grauEscolaridade">
                   <ion-option>ANALFABETO</ion-option>
                   <ion-option>LÊ E ESCREVE</ion-option>
                   <ion-option>ENSINO FUNDAMENTAL INCOMPLETO</ion-option>
@@ -47,7 +47,7 @@
             <div class="form-group">
               <ion-item>
                 <ion-label>Sexo(s)</ion-label>
-                <ion-select multiple="true" cancelText="CANCELAR" okText="OK">
+                <ion-select multiple="true" cancelText="CANCELAR" okText="OK" name="sexo" [(ngModel)]="param.sexo">
                   <ion-option>Masculino</ion-option>
                   <ion-option>Feminino</ion-option>
                   <ion-option>Não informado</ion-option>
@@ -58,19 +58,15 @@
             <div class="form-group">
               <ion-item>
                 <ion-label>Partido(s)</ion-label>
-                <ion-select multiple="true" cancelText="CANCELAR" okText="OK">
-                  <ion-option>1</ion-option>
-                  <ion-option>2</ion-option>
-                  <ion-option>3</ion-option>
-                  <ion-option>4</ion-option>
-                  <ion-option>5</ion-option>
-                  <ion-option>6</ion-option>
-                </ion-select>
+                <ion-select multiple="true" cancelText="CANCELAR" okText="OK" required name="partido" [(ngModel)]="param.partido">
+				   <ion-option *ngFor="let item of partidos" value="{{item}}">{{item}}</ion-option>
+				</ion-select>
               </ion-item>
             </div>
 
-            <button ion-button color="dark">Consultar</button>
-        </div>
+            <button ion-button type="submit" color="dark">Consultar</button>
+			
+        </form>
 
         <div class="page-header">
             <h2>Candidatos</h2>

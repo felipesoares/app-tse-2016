@@ -1,23 +1,28 @@
 <ion-content>
 
   <div class="container">
-    
+
     <div class="form-signin">
 
-      <ion-list>
-        <h2 class="form-signin-heading">TSE 2016</h2>
+      <form (ngSubmit)="login()">
 
-        <ion-item>
-          <ion-input type="text" placeholder="CPF"></ion-input>
-        </ion-item>
+        <ion-list>
 
-        <ion-item>
-          <ion-input type="password" placeholder="Senha"></ion-input>
-        </ion-item>
+          <h2 class="form-signin-heading">TSE 2016</h2>
 
-      </ion-list>
+          <ion-item>
+            <ion-input type="text" required placeholder="CPF" name="cpf" [(ngModel)]="usuario.cpf"></ion-input>
+          </ion-item>
 
-      <button ion-button block color="dark">Logar</button>
+          <ion-item>
+            <ion-input type="password" required placeholder="Senha" name="senha" [(ngModel)]="usuario.senha"></ion-input>
+          </ion-item>
+
+        </ion-list>
+
+        <button ion-button type="submit" color="dark" block>Logar</button>
+        
+      </form>
 
     </div>
 
