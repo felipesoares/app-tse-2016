@@ -1,3 +1,5 @@
 page-candidatos-prefeito {
-
+	.col-sm-4:nth-child(3n-2){
+		clear: both;
+	}
 }

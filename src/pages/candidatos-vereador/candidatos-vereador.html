@@ -74,24 +74,24 @@
 
         <div class="row">
 
-            <div class="col-sm-4">
+            <div class="col-sm-4" *ngFor="let candidato of candidatos">
                 <div class="table-responsive">
                     <table class="table table-hover table-bordered">
                         <tbody>
                             <tr>
-                                <td align="center" colspan="2">Nome</td>
+                                <td align="center" colspan="2">{{candidato.NOME_CANDIDATO}}</td>
                             </tr>
                             <tr>
                               <th>Escolaridade:</th>
-                              <td>X</td>
+                              <td>{{candidato.DESCRICAO_GRAU_INSTRUCAO}}</td>
                             </tr>
                             <tr>
                               <th>Sexo:</th>
-                              <td>X</td>
+                              <td>{{candidato.DESCRICAO_SEXO}}</td>
                             </tr>
                             <tr>
                               <th>Partido:</th>
-                              <td>X</td>
+                              <td>{{candidato.SIGLA_PARTIDO}}</td>
                             </tr>
                         </tbody>
                     </table>

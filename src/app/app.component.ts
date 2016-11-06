@@ -1,6 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { Platform, MenuController, Nav } from 'ionic-angular';
-import { StatusBar } from 'ionic-native';
+//import { StatusBar } from 'ionic-native';
 
 import { Login } from '../pages/login/login';
 import { PerfilEleitorado } from '../pages/perfil-eleitorado/perfil-eleitorado';
@@ -14,7 +14,7 @@ import { CandidatosVereador } from '../pages/candidatos-vereador/candidatos-vere
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = PerfilEleitorado;
+  rootPage: any = CandidatosPrefeito;
   pages: Array<{ title: string, component: any }>;
 
   constructor(
