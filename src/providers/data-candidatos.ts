@@ -6,11 +6,11 @@ import 'rxjs/add/operator/map'
 export class DataCandidatos {
 
   constructor(public http: Http) {
-	this.http = http;
+    this.http = http;
   }
-  
+
   getCandidatos() {
-	  return this.http.get('/assets/candidatos.json').map((res:Response) => res.json());
+    return this.http.get('/assets/candidatos.json').map((res: Response) => res.json());
   }
 
 }

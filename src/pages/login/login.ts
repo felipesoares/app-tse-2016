@@ -11,10 +11,10 @@ import { PerfilEleitorado } from '../perfil-eleitorado/perfil-eleitorado';
 export class Login {
 
   usuario = {}
-  
+
   constructor(public navCtrl: NavController, public menu: MenuController) {
-	  this.menu = menu;
-	  this.menu.swipeEnable(false);
+    this.menu = menu;
+    this.menu.swipeEnable(false);
   }
 
   ionViewDidLoad() {
@@ -23,7 +23,7 @@ export class Login {
 
   login() {
     console.log(this.usuario);
-	this.navCtrl.setRoot(PerfilEleitorado);
+    this.navCtrl.setRoot(PerfilEleitorado);
   }
 
 }
