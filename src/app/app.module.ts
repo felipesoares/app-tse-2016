@@ -8,6 +8,7 @@ import { CandidatosPrefeito } from '../pages/candidatos-prefeito/candidatos-pref
 import { CandidatosVereador } from '../pages/candidatos-vereador/candidatos-vereador';
 
 import { DataCandidatos } from '../providers/data-candidatos';
+import { DataEleitorado } from '../providers/data-eleitorado';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,6 @@ import { DataCandidatos } from '../providers/data-candidatos';
     CandidatosPrefeito,
     CandidatosVereador
   ],
-  providers: [DataCandidatos]
+  providers: [DataCandidatos, DataEleitorado]
 })
 export class AppModule {}

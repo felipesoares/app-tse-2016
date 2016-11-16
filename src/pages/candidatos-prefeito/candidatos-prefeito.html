@@ -12,30 +12,30 @@
   <div class="container">
 
     <div class="starter-template">
-      
+
       <div class="page-header">
         <h1>Candidatos a Prefeito</h1>
       </div>
-	  
+
 		<form (ngSubmit)="consulta()">
-		
+
 		  <div class="form-group">
-			<ion-item>
-			  <ion-label>Cidade</ion-label>
-			  <ion-select cancelText="CANCELAR" okText="OK" required name="cidade" [(ngModel)]="param.cidade">
-				<ion-option value="1" selected="true">Caeté/MG</ion-option>
-			  </ion-select>
-			</ion-item>
+        <ion-item>
+          <ion-label>Cidade</ion-label>
+          <ion-select cancelText="CANCELAR" okText="OK" required name="cidade" [(ngModel)]="params.cidade">
+          <ion-option *ngFor="let cidade of cidades" [value] = "cidade.SIGLA_UE">{{cidade.DESCRICAO_UE}}</ion-option>
+          </ion-select>
+        </ion-item>
 		  </div>
 
 		  <button ion-button type="submit" color="dark">Consultar</button>
-		  
+
 		</form>
-	
+
       <div class="page-header">
         <h2>Candidatos</h2>
       </div>
-	  
+
       <div class="row">
 
 

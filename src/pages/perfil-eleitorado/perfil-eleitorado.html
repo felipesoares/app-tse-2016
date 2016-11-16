@@ -21,8 +21,8 @@
         <div class="form-group">
           <ion-item>
             <ion-label>Zona Eleitoral</ion-label>
-            <ion-select cancelText="CANCELAR" okText="OK" required name="zona" [(ngModel)]="param.zona">
-               <ion-option *ngFor="let item of zonas" value="{{item.value}}">{{item.text}}</ion-option>
+            <ion-select cancelText="CANCELAR" okText="OK" required name="zonaEleitoral" [(ngModel)]="params.zonaEleitoral">
+               <ion-option *ngFor="let item of zonasEleitorais" [value] = "item.NR_ZONA">{{item.NR_ZONA}}</ion-option>
             </ion-select>
           </ion-item>
         </div>
@@ -30,18 +30,8 @@
         <div class="form-group">
           <ion-item>
             <ion-label>Faixa(s) Etária(s)</ion-label>
-            <ion-select multiple="true" cancelText="CANCELAR" okText="OK" name="faixaEtaria" [(ngModel)]="param.faixaEtaria">
-              <ion-option>16 ANOS</ion-option>
-              <ion-option>17 ANOS</ion-option>
-              <ion-option>18 A 20 ANOS</ion-option>
-              <ion-option>21 A 24 ANOS</ion-option>
-              <ion-option>25 A 34 ANOS</ion-option>
-              <ion-option>35 A 44 ANOS</ion-option>
-              <ion-option>45 A 59 ANOS</ion-option>
-              <ion-option>60 A 69 ANOS</ion-option>
-              <ion-option>70 A 79 ANOS</ion-option>
-              <ion-option>SUPERIOR A 79 ANOS</ion-option>
-              <ion-option>INVÁLIDA</ion-option>
+            <ion-select multiple="true" cancelText="CANCELAR" okText="OK" name="faixasEtarias" [(ngModel)]="params.faixasEtarias">
+              <ion-option *ngFor="let item of faixasEtarias" [value] = "item.FAIXA_ETARIA_ID">{{item.FAIXA_ETARIA}}</ion-option>
             </ion-select>
           </ion-item>
         </div>
@@ -49,16 +39,8 @@
         <div class="form-group">
           <ion-item>
             <ion-label>Grau(s) de Escolaridade</ion-label>
-            <ion-select multiple="true" cancelText="CANCELAR" okText="OK" name="grauEscolaridade" [(ngModel)]="param.grauEscolaridade">
-              <ion-option>ANALFABETO</ion-option>
-              <ion-option>LÊ E ESCREVE</ion-option>
-              <ion-option>ENSINO FUNDAMENTAL INCOMPLETO</ion-option>
-              <ion-option>ENSINO FUNDAMENTAL COMPLETO</ion-option>
-              <ion-option>ENSINO MÉDIO INCOMPLETO</ion-option>
-              <ion-option>ENSINO MÉDIO COMPLETO</ion-option>
-              <ion-option>SUPERIOR INCOMPLETO</ion-option>
-              <ion-option>SUPERIOR COMPLETO</ion-option>
-              <ion-option>NÃO INFORMADO</ion-option>
+            <ion-select multiple="true" cancelText="CANCELAR" okText="OK" name="grausEscolaridade" [(ngModel)]="params.grausEscolaridade">
+              <ion-option *ngFor="let item of grausEscolaridade" [value] = "item.GRAU_DE_ESCOLARIDADE_ID">{{item.GRAU_DE_ESCOLARIDADE}}</ion-option>
             </ion-select>
           </ion-item>
         </div>
@@ -69,13 +51,14 @@
 
       <div class="page-header">
         <h2>Resultados</h2>
+        <p>Total: {{totalEleitorado}} eleitores</p>
       </div>
       <div class="panel panel-default">
         <div class="table-responsive">
           <table class="table table-hover table-bordered">
             <thead>
               <tr>
-                <th>Categoria</th>
+                <th>Sexo</th>
                 <th>Quantidade</th>
                 <th>Percentual</th>
               </tr>

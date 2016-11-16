@@ -14,7 +14,7 @@ import { CandidatosVereador } from '../pages/candidatos-vereador/candidatos-vere
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = CandidatosPrefeito;
+  rootPage: any = PerfilEleitorado;
   pages: Array<{ title: string, component: any }>;
 
   constructor(

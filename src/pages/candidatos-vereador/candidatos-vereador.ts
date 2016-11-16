@@ -7,41 +7,72 @@ import { DataCandidatos } from '../../providers/data-candidatos';
 })
 export class CandidatosVereador {
 
-  candidatos = [];
+  cidades = [];
+  grausEscolaridade = [];
+  sexos = [];
   partidos = [];
-  param = { cidade: 1, grauEscolaridade: "", sexo: "", partido: "" }
 
-  constructor(private _service: DataCandidatos) {
-    this.partidos = [
-      "DEM", "NOVO", "PC do B", "PCB", "PCO", "PDT", "PEN", "PHS", "PMB", "PMDB", "PMN", "PP",
-      "PPL", "PPS", "PR", "PRB", "PROS", "PRP", "PRTB", "PSB", "PSC", "PSD", "PSDB", "PSDC",
-      "PSL", "PSOL", "PSTU", "PT", "PT do B", "PTB", "PTC", "PTN", "PV", "REDE", "SD"
-    ];
-    this.getCandidatos();
+  candidatos = [];
+  params = { cidade: '41998', cargo: 13, grausEscolaridade: [], sexos: [], partidos: [] }
+
+  constructor(private _candidatos: DataCandidatos) {
+    this.getCidades();
+
+    this.getGrausEscolaridade();
+    this.getSexos();
+    this.getPartidos();
+
+    this.getCandidatos(this.params.cidade, this.params.cargo);
   }
 
-  getCandidatos() {
-    this._service.getCandidatos().subscribe(
+  getCidades() {
+    this._candidatos.getCidades().subscribe(
       data => {
-        //this.candidatos = data
-        console.log(data);
+        this.cidades = data;
+      },
+      err => { }
+    );
+  }
 
-        this.candidatos = [];
-        for (let index = 0; index < data.length; index++) {
-          if (data[index].CODIGO_CARGO == 13) {
-            this.candidatos.push(data[index]);
-          }
-        }
+  getGrausEscolaridade() {
+    this._candidatos.getGrausEscolaridade().subscribe(
+      data => {
+        this.grausEscolaridade = data;
+      },
+      err => { }
+    );
+  }
+
+  getSexos() {
+    this._candidatos.getSexos().subscribe(
+      data => {
+        this.sexos = data;
+      },
+      err => { }
+    );
+  }
+
+  getPartidos() {
+    this._candidatos.getPartidos().subscribe(
+      data => {
+        this.partidos = data;
+      },
+      err => { }
+    );
+  }
+
+  getCandidatos(cidade: string, cargo = null, grausEscolaridade = [], sexos = [], partidos = []) {
+    this._candidatos.getCandidatos(cidade, cargo, grausEscolaridade, sexos, partidos).subscribe(
+      data => {
+        this.candidatos = data;
       },
       err => { }
     );
   }
 
   consulta() {
-    console.log("Consulta submetida");
-    console.log(this.param);
-    this.getCandidatos();
-    //CODIGO_CARGO:13,NOME_CANDIDATO,DESCRICAO_GRAU_INSTRUCAO,DESCRICAO_SEXO,SIGLA_PARTIDO
+    console.log(this.params);
+    this.getCandidatos(this.params.cidade, this.params.cargo, this.params.grausEscolaridade, this.params.sexos, this.params.partidos);
   }
 
 }
