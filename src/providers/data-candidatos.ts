@@ -5,18 +5,24 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class DataCandidatos {
 
+  dominio: string;
+
   constructor(public http: Http) {
     this.http = http;
+    
+    this.dominio = "http://ws.localhost.com";
+    this.dominio = "http://ws.localhost.com:8080";
+    this.dominio = "http://webservice.cafecomnutricao.com.br";
   }
 
   getCidades() {
-    let url = 'http://ws.localhost.com/candidatos/cidades';
+    let url = this.dominio + '/candidatos/cidades';
     return this.http.get(url).map((res: Response) => res.json());
   }
 
   getCandidatos(cidade: string, cargo = null, grausEscolaridade = [], sexos = [], partidos = []) {
 
-    let url = "http://ws.localhost.com/candidatos";
+    let url = this.dominio + '/candidatos';
 
     url += "/" + cidade;
     url += "/" + ( cargo ? cargo : "0" );
@@ -30,17 +36,17 @@ export class DataCandidatos {
   }
 
   getGrausEscolaridade() {
-    let url = 'http://ws.localhost.com/candidatos/graus-escolaridade';
+    let url = this.dominio + '/candidatos/graus-escolaridade';
     return this.http.get(url).map((res: Response) => res.json());
   }
 
   getSexos() {
-    let url = 'http://ws.localhost.com/candidatos/sexos';
+    let url = this.dominio + '/candidatos/sexos';
     return this.http.get(url).map((res: Response) => res.json());
   }
 
   getPartidos() {
-    let url = 'http://ws.localhost.com/candidatos/partidos';
+    let url = this.dominio + '/candidatos/partidos';
     return this.http.get(url).map((res: Response) => res.json());
   }
 

@@ -5,13 +5,19 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class DataEleitorado {
 
+  dominio: string;
+
   constructor(public http: Http) {
     this.http = http;
+    
+    this.dominio = "http://ws.localhost.com";
+    this.dominio = "http://ws.localhost.com:8080";
+    this.dominio = "http://webservice.cafecomnutricao.com.br";
   }
 
   getZonasEleitorais(uf: string) {
 
-    let url = 'http://ws.localhost.com/eleitorado/zonas-eleitorais';
+    let url = this.dominio + '/eleitorado/zonas-eleitorais';
 
     url += "/" + uf;
 
@@ -20,18 +26,18 @@ export class DataEleitorado {
   }
 
   getFaixasEtarias() {
-    let url = 'http://ws.localhost.com/eleitorado/faixas-etarias';
+    let url = this.dominio + '/eleitorado/faixas-etarias';
     return this.http.get(url).map((res: Response) => res.json());
   }
 
   getGrausEscolaridade() {
-    let url = 'http://ws.localhost.com/eleitorado/graus-escolaridade';
+    let url = this.dominio + '/eleitorado/graus-escolaridade';
     return this.http.get(url).map((res: Response) => res.json());
   }
   
   getTotal(uf: string, zonaEleitoral: string) {
 
-    let url = 'http://ws.localhost.com/eleitorado/total';
+    let url = this.dominio + '/eleitorado/total';
 
     url += "/" + uf;
     url += "/" + zonaEleitoral;
@@ -42,7 +48,7 @@ export class DataEleitorado {
   
   getEleitorado(uf: string, zonaEleitoral: string, faixasEtarias = [], grausEscolaridade = []) {
 
-    let url = 'http://ws.localhost.com/eleitorado';
+    let url = this.dominio + '/eleitorado';
 
     url += "/" + uf;
     url += "/" + zonaEleitoral;
