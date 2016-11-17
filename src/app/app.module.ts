@@ -7,6 +7,7 @@ import { PerfilEleitorado } from '../pages/perfil-eleitorado/perfil-eleitorado';
 import { CandidatosPrefeito } from '../pages/candidatos-prefeito/candidatos-prefeito';
 import { CandidatosVereador } from '../pages/candidatos-vereador/candidatos-vereador';
 
+import { DataLogin } from '../providers/data-login';
 import { DataCandidatos } from '../providers/data-candidatos';
 import { DataEleitorado } from '../providers/data-eleitorado';
 
@@ -29,6 +30,6 @@ import { DataEleitorado } from '../providers/data-eleitorado';
     CandidatosPrefeito,
     CandidatosVereador
   ],
-  providers: [DataCandidatos, DataEleitorado]
+  providers: [DataLogin, DataCandidatos, DataEleitorado]
 })
 export class AppModule {}
