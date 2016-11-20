@@ -6,9 +6,6 @@
 1 feminino 0,0022935253778583 %	
 4 total 0,0091741015114332 %
 
-Fazer os cálculos
-login
-loader
 testes
-base de dados / ws
+loader
 

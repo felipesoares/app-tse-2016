@@ -1,3 +1,4 @@
+<!-- cabeçalho -->
 <ion-header>
   <ion-navbar>
     <button ion-button menuToggle>
@@ -7,15 +8,18 @@
   </ion-navbar>
 </ion-header>
 
+<!-- conteúdo -->
 <ion-content>
+
   <div class="container">
 
     <div class="starter-template">
       
       <div class="page-header">
-        <h1>Perfil dos Eleitores por Zona Eleitoral</h1>
+        <h1>Perfil dos Eleitores por Zona Eleitoral ({{params.uf}})</h1>
       </div>
 	  
+      <!-- formulário -->
       <form (ngSubmit)="consulta()">
 
         <div class="form-group">
@@ -49,9 +53,10 @@
 		
       </form>
 
+      <!-- apresentação da tabela dos resultados -->
       <div class="page-header">
         <h2>Resultados</h2>
-        <p>Total: {{totalEleitorado}} eleitores</p>
+        <p>Eleitorado total: {{eleitorado.total}} eleitores</p>
       </div>
       <div class="panel panel-default">
         <div class="table-responsive">
@@ -66,23 +71,23 @@
             <tbody>
               <tr>
                 <td>Feminino</td>
-                <td>X</td>
-                <td>%</td>
+                <td>{{resultado.feminino.qtd}}</td>
+                <td>{{resultado.feminino.per}}%</td>
               </tr>
               <tr>
                 <td>Masculino</td>
-                <td>X</td>
-                <td>%</td>
+                <td>{{resultado.masculino.qtd}}</td>
+                <td>{{resultado.masculino.per}}%</td>
               </tr>
               <tr>
                 <td>Não informado</td>
-                <td>X</td>
-                <td>%</td>
+                <td>{{resultado.ni.qtd}}</td>
+                <td>{{resultado.ni.per}}%</td>
               </tr>
               <tr>
                 <td>TOTAL</td>
-                <td>X</td>
-                <td>%</td>
+                <td>{{resultado.total.qtd}}</td>
+                <td>{{resultado.total.per}}%</td>
               </tr>
             </tbody>
           </table>
@@ -91,5 +96,7 @@
       </div>
 
     </div>
+
   </div>
+
 </ion-content>

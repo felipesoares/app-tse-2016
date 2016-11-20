@@ -1,20 +1,27 @@
+// importa as libs necessárias
 import { Component, ViewChild } from '@angular/core';
 import { Platform, MenuController, Nav } from 'ionic-angular';
-//import { StatusBar } from 'ionic-native';
 
+// importa as pages do app para o menu
 import { Login } from '../pages/login/login';
 import { PerfilEleitorado } from '../pages/perfil-eleitorado/perfil-eleitorado';
 import { CandidatosPrefeito } from '../pages/candidatos-prefeito/candidatos-prefeito';
 import { CandidatosVereador } from '../pages/candidatos-vereador/candidatos-vereador';
 
+// define o template html padrão
 @Component({
   templateUrl: 'app.html'
 })
 
 export class MyApp {
+
+  // assinatura das views do app
   @ViewChild(Nav) nav: Nav;
 
+  // define a página principal (inicial) do app
   rootPage: any = PerfilEleitorado;
+
+  // vetor de páginas
   pages: Array<{ title: string, component: any }>;
 
   constructor(
@@ -23,7 +30,7 @@ export class MyApp {
   ) {
     this.initializeApp();
 
-    // set our app's pages
+    // configura as páginas do app
     this.pages = [
       { title: 'Perfil Eleitoral', component: PerfilEleitorado },
       { title: 'Candidatos a Prefeito', component: CandidatosPrefeito },
@@ -36,10 +43,10 @@ export class MyApp {
     this.platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
-      //StatusBar.styleDefault();
     });
   }
 
+  // método responsável por abrir uma determinada página
   openPage(page) {
     // close the menu when clicking a link from the menu
     this.menu.close();
