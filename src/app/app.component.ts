@@ -19,7 +19,7 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   // define a página principal (inicial) do app
-  rootPage: any = PerfilEleitorado;
+  rootPage: any = Login;
 
   // vetor de páginas
   pages: Array<{ title: string, component: any }>;
